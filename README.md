@@ -28,6 +28,27 @@ module.exports = {
 
 This plugin lets you load data from the Buttondown API. This allows you to directly host your own archive within Gridsome.
 
+You can then query the collection. All field names the Buttondown API provides are available. [View Reference](https://api.buttondown.email/v1/schema#operation/emails_list)
+
+```html
+<page-query>
+{
+    allEmail {
+        edges {
+            node {
+                id, 
+                publish_date, 
+                email_type, 
+                subject, 
+                body,
+                path
+            }
+        }
+    }
+}
+</page-query>
+```
+
 ## Options
 
 #### apiKey
